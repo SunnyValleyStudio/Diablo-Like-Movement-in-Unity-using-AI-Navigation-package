@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     {
         _input.OnMouseClick += _movement.SetDestination;
         _movement.OnSpeedChanged += _agentAnimation.SetSpeed;
+        _movement.OnStartJump.AddListener(_agentAnimation.Jump);
         _agentAnimation.SetSpeed(0);
     }
 
